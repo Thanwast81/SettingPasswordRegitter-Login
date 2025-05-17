@@ -2,7 +2,7 @@
 $login_success = false;
 $error = "";
 $fullname = "";
-
+// ===================MAIN PROGRAM=================================
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = trim($_POST["email"]);
     $password = trim($_POST["password"]);
@@ -59,6 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             ✅ Welcome, <?php echo htmlspecialchars($fullname); ?>!
         </p>
     <?php else: ?>
+<!-- HTML FORM -->
         <?php if ($error) echo "<p style='color:red; font-weight:bold;'>$error</p>"; ?>
         <form method="post" action="">
             <label>Email</label>

@@ -1,4 +1,5 @@
 <?php
+// =================ฟังค์ชันตรวจสอบความปลอดภัยของรหัส===========================
 function validate_password($password, $email) {
     if (strlen($password) != 12) {
         return "Password ต้องมีความยาว 12 ตัวอักษร";
@@ -20,7 +21,7 @@ function validate_password($password, $email) {
     }
     return true;
 }
-
+// =================MAIN PROGRAM=========================
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
     $fname = trim($_POST["fname"]);
     $lname = trim($_POST["lname"]);
@@ -43,6 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     }
 }
 ?>
+<!-- HTML FORM -->
 <form method="post">
     <label>FirstName</label><input type="text" name="fname" required><br>
     <label>LastName</label><input type="text" name="lname" required><br>
